@@ -35,12 +35,14 @@ class PartialAudio {
   final Map<String, dynamic>? metadata;
 
   /// Media type of the audio file.
+  @JsonKey(name: 'mime_type')
   final String? mimeType;
 
   /// The name of the audio.
   final String name;
 
   /// Message that is being replied to with the current message.
+  @JsonKey(name: 'replied_message')
   final Message? repliedMessage;
 
   /// Size of the audio in bytes.
@@ -50,6 +52,7 @@ class PartialAudio {
   final String uri;
 
   /// Wave form represented as a list of decibel levels.
+  @JsonKey(name: 'waveform')
   final List<double>? waveForm;
 
   /// Converts a partial audio message to the map representation, encodable to JSON.

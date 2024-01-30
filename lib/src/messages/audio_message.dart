@@ -92,6 +92,7 @@ abstract class AudioMessage extends Message {
   final Duration duration;
 
   /// Media type of the audio file.
+  @JsonKey(name: 'mime_type')
   final String? mimeType;
 
   /// The name of the audio.
@@ -104,6 +105,7 @@ abstract class AudioMessage extends Message {
   final String uri;
 
   /// Wave form represented as a list of decibel levels.
+  @JsonKey(name: 'waveform')
   final List<double>? waveForm;
 
   /// Equatable props.

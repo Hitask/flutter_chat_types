@@ -38,6 +38,7 @@ class PartialImage {
   final String name;
 
   /// Message that is being replied to with the current message.
+  @JsonKey(name: 'replied_message')
   final Message? repliedMessage;
 
   /// Size of the image in bytes.

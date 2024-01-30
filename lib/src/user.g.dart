@@ -7,15 +7,15 @@ part of 'user.dart';
 // **************************************************************************
 
 User _$UserFromJson(Map<String, dynamic> json) => User(
-      createdAt: json['createdAt'] as int?,
-      firstName: json['firstName'] as String?,
+      createdAt: json['created_at'] as int?,
+      firstName: json['first_name'] as String?,
       id: json['id'] as String,
-      imageUrl: json['imageUrl'] as String?,
-      lastName: json['lastName'] as String?,
-      lastSeen: json['lastSeen'] as int?,
+      imageUrl: json['image_url'] as String?,
+      lastName: json['last_name'] as String?,
+      lastSeen: json['last_seen'] as int?,
       metadata: json['metadata'] as Map<String, dynamic>?,
       role: $enumDecodeNullable(_$RoleEnumMap, json['role']),
-      updatedAt: json['updatedAt'] as int?,
+      updatedAt: json['updated_at'] as int?,
     );
 
 Map<String, dynamic> _$UserToJson(User instance) {
@@ -27,15 +27,15 @@ Map<String, dynamic> _$UserToJson(User instance) {
     }
   }
 
-  writeNotNull('createdAt', instance.createdAt);
-  writeNotNull('firstName', instance.firstName);
+  writeNotNull('created_at', instance.createdAt);
+  writeNotNull('first_name', instance.firstName);
   val['id'] = instance.id;
-  writeNotNull('imageUrl', instance.imageUrl);
-  writeNotNull('lastName', instance.lastName);
-  writeNotNull('lastSeen', instance.lastSeen);
+  writeNotNull('image_url', instance.imageUrl);
+  writeNotNull('last_name', instance.lastName);
+  writeNotNull('last_seen', instance.lastSeen);
   writeNotNull('metadata', instance.metadata);
   writeNotNull('role', _$RoleEnumMap[instance.role]);
-  writeNotNull('updatedAt', instance.updatedAt);
+  writeNotNull('updated_at', instance.updatedAt);
   return val;
 }
 

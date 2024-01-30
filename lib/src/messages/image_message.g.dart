@@ -8,21 +8,21 @@ part of 'image_message.dart';
 
 ImageMessage _$ImageMessageFromJson(Map<String, dynamic> json) => ImageMessage(
       author: User.fromJson(json['author'] as Map<String, dynamic>),
-      createdAt: json['createdAt'] as int?,
+      createdAt: json['created_at'] as int?,
       height: (json['height'] as num?)?.toDouble(),
       id: json['id'] as String,
       metadata: json['metadata'] as Map<String, dynamic>?,
       name: json['name'] as String,
-      remoteId: json['remoteId'] as String?,
-      repliedMessage: json['repliedMessage'] == null
+      remoteId: json['remote_id'] as String?,
+      repliedMessage: json['replied_message'] == null
           ? null
-          : Message.fromJson(json['repliedMessage'] as Map<String, dynamic>),
-      roomId: json['roomId'] as String?,
-      showStatus: json['showStatus'] as bool?,
+          : Message.fromJson(json['replied_message'] as Map<String, dynamic>),
+      roomId: json['room_id'] as String?,
+      showStatus: json['show_status'] as bool?,
       size: json['size'] as num,
       status: $enumDecodeNullable(_$StatusEnumMap, json['status']),
       type: $enumDecodeNullable(_$MessageTypeEnumMap, json['type']),
-      updatedAt: json['updatedAt'] as int?,
+      updatedAt: json['updated_at'] as int?,
       uri: json['uri'] as String,
       width: (json['width'] as num?)?.toDouble(),
     );
@@ -38,16 +38,16 @@ Map<String, dynamic> _$ImageMessageToJson(ImageMessage instance) {
     }
   }
 
-  writeNotNull('createdAt', instance.createdAt);
+  writeNotNull('created_at', instance.createdAt);
   val['id'] = instance.id;
   writeNotNull('metadata', instance.metadata);
-  writeNotNull('remoteId', instance.remoteId);
-  writeNotNull('repliedMessage', instance.repliedMessage?.toJson());
-  writeNotNull('roomId', instance.roomId);
-  writeNotNull('showStatus', instance.showStatus);
+  writeNotNull('remote_id', instance.remoteId);
+  writeNotNull('replied_message', instance.repliedMessage?.toJson());
+  writeNotNull('room_id', instance.roomId);
+  writeNotNull('show_status', instance.showStatus);
   writeNotNull('status', _$StatusEnumMap[instance.status]);
   val['type'] = _$MessageTypeEnumMap[instance.type]!;
-  writeNotNull('updatedAt', instance.updatedAt);
+  writeNotNull('updated_at', instance.updatedAt);
   writeNotNull('height', instance.height);
   val['name'] = instance.name;
   val['size'] = instance.size;

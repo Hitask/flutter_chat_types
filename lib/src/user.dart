@@ -40,21 +40,26 @@ abstract class User extends Equatable {
   factory User.fromJson(Map<String, dynamic> json) => _$UserFromJson(json);
 
   /// Created user timestamp, in ms.
+  @JsonKey(name: 'created_at')
   final int? createdAt;
 
   /// First name of the user.
+  @JsonKey(name: 'first_name')
   final String? firstName;
 
   /// Unique ID of the user.
   final String id;
 
   /// Remote image URL representing user's avatar.
+  @JsonKey(name: 'image_url')
   final String? imageUrl;
 
   /// Last name of the user.
+  @JsonKey(name: 'last_name')
   final String? lastName;
 
   /// Timestamp when user was last visible, in ms.
+  @JsonKey(name: 'last_seen')
   final int? lastSeen;
 
   /// Additional custom metadata or attributes related to the user.
@@ -64,6 +69,7 @@ abstract class User extends Equatable {
   final Role? role;
 
   /// Updated user timestamp, in ms.
+  @JsonKey(name: 'updated_at')
   final int? updatedAt;
 
   /// Equatable props.

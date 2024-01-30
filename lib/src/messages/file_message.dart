@@ -87,9 +87,11 @@ abstract class FileMessage extends Message {
       );
 
   /// Specify whether the message content is currently being loaded.
+  @JsonKey(name: 'is_loading')
   final bool? isLoading;
 
   /// Media type.
+  @JsonKey(name: 'mime_type')
   final String? mimeType;
 
   /// The name of the file.

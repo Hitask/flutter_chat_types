@@ -8,12 +8,12 @@ part of 'partial_text.dart';
 
 PartialText _$PartialTextFromJson(Map<String, dynamic> json) => PartialText(
       metadata: json['metadata'] as Map<String, dynamic>?,
-      previewData: json['previewData'] == null
+      previewData: json['preview_data'] == null
           ? null
-          : PreviewData.fromJson(json['previewData'] as Map<String, dynamic>),
-      repliedMessage: json['repliedMessage'] == null
+          : PreviewData.fromJson(json['preview_data'] as Map<String, dynamic>),
+      repliedMessage: json['replied_message'] == null
           ? null
-          : Message.fromJson(json['repliedMessage'] as Map<String, dynamic>),
+          : Message.fromJson(json['replied_message'] as Map<String, dynamic>),
       text: json['text'] as String,
     );
 
@@ -27,8 +27,8 @@ Map<String, dynamic> _$PartialTextToJson(PartialText instance) {
   }
 
   writeNotNull('metadata', instance.metadata);
-  writeNotNull('previewData', instance.previewData?.toJson());
-  writeNotNull('repliedMessage', instance.repliedMessage?.toJson());
+  writeNotNull('preview_data', instance.previewData?.toJson());
+  writeNotNull('replied_message', instance.repliedMessage?.toJson());
   val['text'] = instance.text;
   return val;
 }

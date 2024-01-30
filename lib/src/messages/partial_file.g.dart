@@ -8,11 +8,11 @@ part of 'partial_file.dart';
 
 PartialFile _$PartialFileFromJson(Map<String, dynamic> json) => PartialFile(
       metadata: json['metadata'] as Map<String, dynamic>?,
-      mimeType: json['mimeType'] as String?,
+      mimeType: json['mime_type'] as String?,
       name: json['name'] as String,
-      repliedMessage: json['repliedMessage'] == null
+      repliedMessage: json['replied_message'] == null
           ? null
-          : Message.fromJson(json['repliedMessage'] as Map<String, dynamic>),
+          : Message.fromJson(json['replied_message'] as Map<String, dynamic>),
       size: json['size'] as num,
       uri: json['uri'] as String,
     );
@@ -27,9 +27,9 @@ Map<String, dynamic> _$PartialFileToJson(PartialFile instance) {
   }
 
   writeNotNull('metadata', instance.metadata);
-  writeNotNull('mimeType', instance.mimeType);
+  writeNotNull('mime_type', instance.mimeType);
   val['name'] = instance.name;
-  writeNotNull('repliedMessage', instance.repliedMessage?.toJson());
+  writeNotNull('replied_message', instance.repliedMessage?.toJson());
   val['size'] = instance.size;
   val['uri'] = instance.uri;
   return val;

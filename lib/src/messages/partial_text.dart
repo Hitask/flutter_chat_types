@@ -30,9 +30,11 @@ class PartialText {
   final Map<String, dynamic>? metadata;
 
   /// See [PreviewData].
+  @JsonKey(name: 'preview_data')
   final PreviewData? previewData;
 
   /// Message that is being replied to with the current message.
+  @JsonKey(name: 'replied_message')
   final Message? repliedMessage;
 
   /// User's message.

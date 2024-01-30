@@ -27,6 +27,7 @@ class PartialCustom {
   final Map<String, dynamic>? metadata;
 
   /// Message that is being replied to with the current message.
+  @JsonKey(name: 'replied_message')
   final Message? repliedMessage;
 
   /// Converts a partial custom message to the map representation, encodable to JSON.

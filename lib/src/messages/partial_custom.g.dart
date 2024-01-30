@@ -9,9 +9,9 @@ part of 'partial_custom.dart';
 PartialCustom _$PartialCustomFromJson(Map<String, dynamic> json) =>
     PartialCustom(
       metadata: json['metadata'] as Map<String, dynamic>?,
-      repliedMessage: json['repliedMessage'] == null
+      repliedMessage: json['replied_message'] == null
           ? null
-          : Message.fromJson(json['repliedMessage'] as Map<String, dynamic>),
+          : Message.fromJson(json['replied_message'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$PartialCustomToJson(PartialCustom instance) {
@@ -24,6 +24,6 @@ Map<String, dynamic> _$PartialCustomToJson(PartialCustom instance) {
   }
 
   writeNotNull('metadata', instance.metadata);
-  writeNotNull('repliedMessage', instance.repliedMessage?.toJson());
+  writeNotNull('replied_message', instance.repliedMessage?.toJson());
   return val;
 }

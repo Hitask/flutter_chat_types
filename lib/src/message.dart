@@ -1,4 +1,5 @@
 import 'package:equatable/equatable.dart';
+import 'package:json_annotation/json_annotation.dart';
 import 'package:meta/meta.dart';
 
 import 'messages/audio_message.dart';
@@ -76,6 +77,7 @@ abstract class Message extends Equatable {
   final User author;
 
   /// Created message timestamp, in ms.
+  @JsonKey(name: 'created_at')
   final int? createdAt;
 
   /// Unique ID of the message.
@@ -85,15 +87,19 @@ abstract class Message extends Equatable {
   final Map<String, dynamic>? metadata;
 
   /// Unique ID of the message received from the backend.
+  @JsonKey(name: 'remote_id')
   final String? remoteId;
 
   /// Message that is being replied to with the current message.
+  @JsonKey(name: 'replied_message')
   final Message? repliedMessage;
 
   /// ID of the room where this message is sent.
+  @JsonKey(name: 'room_id')
   final String? roomId;
 
   /// Show status or not.
+  @JsonKey(name: 'show_status')
   final bool? showStatus;
 
   /// Message [Status].
@@ -103,6 +109,7 @@ abstract class Message extends Equatable {
   final MessageType type;
 
   /// Updated message timestamp, in ms.
+  @JsonKey(name: 'updated_at')
   final int? updatedAt;
 
   /// Creates a copy of the message with an updated data.

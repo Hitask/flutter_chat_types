@@ -43,6 +43,7 @@ abstract class Room extends Equatable {
   factory Room.fromJson(Map<String, dynamic> json) => _$RoomFromJson(json);
 
   /// Created room timestamp, in ms.
+  @JsonKey(name: 'created_at')
   final int? createdAt;
 
   /// Room's unique ID.
@@ -50,9 +51,11 @@ abstract class Room extends Equatable {
 
   /// Room's image. In case of the [RoomType.direct] - avatar of the second person,
   /// otherwise a custom image [RoomType.group].
+  @JsonKey(name: 'image_url')
   final String? imageUrl;
 
   /// List of last messages this room has received.
+  @JsonKey(name: 'last_messages')
   final List<Message>? lastMessages;
 
   /// Additional custom metadata or attributes related to the room.
@@ -66,6 +69,7 @@ abstract class Room extends Equatable {
   final RoomType? type;
 
   /// Updated room timestamp, in ms.
+  @JsonKey(name: 'updated_at')
   final int? updatedAt;
 
   /// List of users which are in the room.

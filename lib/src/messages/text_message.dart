@@ -78,6 +78,7 @@ abstract class TextMessage extends Message {
       );
 
   /// See [PreviewData].
+  @JsonKey(name: 'preview_data')
   final PreviewData? previewData;
 
   /// User's message.

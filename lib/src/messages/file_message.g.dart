@@ -8,22 +8,22 @@ part of 'file_message.dart';
 
 FileMessage _$FileMessageFromJson(Map<String, dynamic> json) => FileMessage(
       author: User.fromJson(json['author'] as Map<String, dynamic>),
-      createdAt: json['createdAt'] as int?,
+      createdAt: json['created_at'] as int?,
       id: json['id'] as String,
-      isLoading: json['isLoading'] as bool?,
+      isLoading: json['is_loading'] as bool?,
       metadata: json['metadata'] as Map<String, dynamic>?,
-      mimeType: json['mimeType'] as String?,
+      mimeType: json['mime_type'] as String?,
       name: json['name'] as String,
-      remoteId: json['remoteId'] as String?,
-      repliedMessage: json['repliedMessage'] == null
+      remoteId: json['remote_id'] as String?,
+      repliedMessage: json['replied_message'] == null
           ? null
-          : Message.fromJson(json['repliedMessage'] as Map<String, dynamic>),
-      roomId: json['roomId'] as String?,
-      showStatus: json['showStatus'] as bool?,
+          : Message.fromJson(json['replied_message'] as Map<String, dynamic>),
+      roomId: json['room_id'] as String?,
+      showStatus: json['show_status'] as bool?,
       size: json['size'] as num,
       status: $enumDecodeNullable(_$StatusEnumMap, json['status']),
       type: $enumDecodeNullable(_$MessageTypeEnumMap, json['type']),
-      updatedAt: json['updatedAt'] as int?,
+      updatedAt: json['updated_at'] as int?,
       uri: json['uri'] as String,
     );
 
@@ -38,18 +38,18 @@ Map<String, dynamic> _$FileMessageToJson(FileMessage instance) {
     }
   }
 
-  writeNotNull('createdAt', instance.createdAt);
+  writeNotNull('created_at', instance.createdAt);
   val['id'] = instance.id;
   writeNotNull('metadata', instance.metadata);
-  writeNotNull('remoteId', instance.remoteId);
-  writeNotNull('repliedMessage', instance.repliedMessage?.toJson());
-  writeNotNull('roomId', instance.roomId);
-  writeNotNull('showStatus', instance.showStatus);
+  writeNotNull('remote_id', instance.remoteId);
+  writeNotNull('replied_message', instance.repliedMessage?.toJson());
+  writeNotNull('room_id', instance.roomId);
+  writeNotNull('show_status', instance.showStatus);
   writeNotNull('status', _$StatusEnumMap[instance.status]);
   val['type'] = _$MessageTypeEnumMap[instance.type]!;
-  writeNotNull('updatedAt', instance.updatedAt);
-  writeNotNull('isLoading', instance.isLoading);
-  writeNotNull('mimeType', instance.mimeType);
+  writeNotNull('updated_at', instance.updatedAt);
+  writeNotNull('is_loading', instance.isLoading);
+  writeNotNull('mime_type', instance.mimeType);
   val['name'] = instance.name;
   val['size'] = instance.size;
   val['uri'] = instance.uri;
